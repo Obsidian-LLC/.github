@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.35" />
+      <stop offset="70%" stop-color="#4c1d95" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0b0817" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Obsidian main gradients -->
+    <linearGradient id="facetTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="50%" stop-color="#7e22ce" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+
+    <linearGradient id="facetLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87" />
+      <stop offset="100%" stop-color="#1e1035" />
+    </linearGradient>
+
+    <linearGradient id="facetRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b0764" />
+      <stop offset="100%" stop-color="#0f051d" />
+    </linearGradient>
+
+    <linearGradient id="facetCore" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#e879f9" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#6b21a8" />
+    </linearGradient>
+
+    <linearGradient id="facetCyanGlance" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="hyperGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="blur1" />
+      <feGaussianBlur stdDeviation="30" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient Outer Aura -->
+  <circle cx="256" cy="256" r="230" fill="url(#bgGlow)" />
+
+  <!-- Geometric Obsidian Crystal Outer Shell -->
+  <g filter="url(#hyperGlow)" opacity="0.6">
+    <polygon points="256,48 400,168 432,320 256,464 80,320 112,168" fill="none" stroke="#a855f7" stroke-width="4" stroke-opacity="0.4" />
+  </g>
+
+  <!-- Central Obsidian Crystal Body -->
+  <g>
+    <!-- Base Dark Obsidian Shards -->
+    <polygon points="256,64 128,176 216,256 256,160" fill="url(#facetLeft)" />
+    <polygon points="256,64 256,160 296,256 384,176" fill="url(#facetRight)" />
+    <polygon points="128,176 96,312 208,352 216,256" fill="#180b2b" />
+    <polygon points="384,176 296,256 304,352 416,312" fill="#0d0417" />
+    <polygon points="96,312 256,448 256,368 208,352" fill="url(#facetLeft)" />
+    <polygon points="416,312 304,352 256,368 256,448" fill="#090212" />
+
+    <!-- Center Glowing Obsidian Rune / Core Heart -->
+    <polygon points="256,160 216,256 256,368 296,256" fill="url(#facetCore)" filter="url(#neonGlow)" />
+    
+    <!-- Internal Laser Reflections & Light Highlights -->
+    <polygon points="256,64 256,160 216,256" fill="url(#facetCyanGlance)" opacity="0.45" />
+    <line x1="256" y1="64" x2="256" y2="368" stroke="#f0abfc" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+    <line x1="216" y1="256" x2="296" y2="256" stroke="#38bdf8" stroke-width="2" opacity="0.75" />
+    
+    <!-- Sharp Rim Edges (Polished Obsidian Sheen) -->
+    <polyline points="256,64 128,176 96,312 256,448" fill="none" stroke="#c084fc" stroke-width="2.5" stroke-opacity="0.85" />
+    <polyline points="256,64 384,176 416,312 256,448" fill="none" stroke="#7e22ce" stroke-width="2.5" stroke-opacity="0.6" />
+    
+    <!-- Diamond Highlight Sparkles -->
+    <circle cx="256" cy="64" r="5" fill="#ffffff" filter="url(#neonGlow)" />
+    <circle cx="216" cy="256" r="3.5" fill="#38bdf8" />
+    <circle cx="296" cy="256" r="3.5" fill="#f472b6" />
+    <circle cx="256" cy="264" r="4" fill="#ffffff" filter="url(#neonGlow)" />
+  </g>
+
+  <!-- Modern Tech Circuit Orbit Rings -->
+  <g opacity="0.4" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="6,8">
+    <ellipse cx="256" cy="256" rx="195" ry="75" transform="rotate(-25 256 256)" fill="none" />
+    <ellipse cx="256" cy="256" rx="195" ry="75" transform="rotate(35 256 256)" fill="none" stroke="#38bdf8" stroke-opacity="0.5" />
+  </g>
+</svg>
